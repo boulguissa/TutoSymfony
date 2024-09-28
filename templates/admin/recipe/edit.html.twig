@@ -1,0 +1,36 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title "Recette :" ~ recipe.title %}
+
+{% block body %}
+    <h1>{{ recipe.title }}</h1>
+    {{ form_start(form) }}
+    <div class="form-grou d-flex py-4 ms-2 ">
+       <span class="d-flex ">
+        {{ form_row(form.title) }}
+        {{ form_row(form.slug) }}
+        {{ form_row(form.category) }}
+        {{ form_row(form.thumbnailFile) }}
+        {{ form_row(form.content) }}
+        {{ form_row(form.duration) }}
+       </span>
+    </div>
+    <div>
+        <img src="{{ vich_uploader_asset(recipe, 'thumbnailFile') }}" alt="">
+    </div>
+
+    {% if form.vars.errors|length > 0 %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for error in form.vars.errors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+
+{{ form_end(form) }}
+
+{% endblock %}

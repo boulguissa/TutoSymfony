@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Une nouvèlle demande a bien été reçu</p>
+
+    <ul>
+        {% for donnee in data %}
+            <li>
+                {{ donnee. }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!--ul>
+        <li>
+            Nom : {#{ data.name }#}
+        </li>
+        <li>
+            Email: {#{ data.email }#}
+        </li>
+    </!--ul>
+    <p>
+        <strong>message : </strong>
+        {#{ data.message | raw} #}
+    </p>
+</body>
+</html>

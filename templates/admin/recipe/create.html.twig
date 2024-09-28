@@ -1,0 +1,26 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title "créer une nouvèlle recette" %}
+
+{% block body %}
+    <h1>créer une nouvèlle recette</h1>
+
+
+    {{ form_start(form) }}
+    <div class="form-grou d-flex py-4 ms-2 ">
+       <span class="d-flex ">
+        {{ form_row(form.title) }}
+        {{ form_row(form.slug) }}
+        {{ form_row(form.category) }}
+        {{ form_row(form.thumbnailFile) }}
+        {{ form_row(form.content) }}
+        {{ form_row(form.duration) }}
+       </span>
+    </div>
+    <div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+{{ form_end(form) }}
+
+{% endblock %}
